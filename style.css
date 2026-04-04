@@ -230,81 +230,6 @@ section:nth-child(2n + 1) {
   width: 55%;
 }
 
-/*Time line */
-
-.timeline {
-  position: relative;
-  width: 75%;
-  border: 2px solid black;
-}
-.timeline-box {
-  position: relative;
-  width: 40%;
-  margin: 5px;
-  left: 5%;
-  border: 2px solid black;
-  /*min-block-size: 20%;*/
-  min-height: 150px;
-}
-
-.timeline-box:nth-child(2n) {
-  left: 53%;
-}
-.timeline-divider {
-  position: absolute;
-  height: 75%;
-  width: 0;
-  border: 3px dashed #0096fa6b;
-  top: 10%;
-  left: 50%;
-}
-
-/* Experience mobile scrren size*/
-@media screen and (max-width: 600px) {
-  .timeline-divider {
-    left: 5%;
-  }
-
-  .timeline-box {
-    left: 12% !important;
-    width: 80%;
-  }
-
-  .timeline-box::after {
-    left: -12% !important;
-  }
-}
-
-.timeline-traveller {
-  position: sticky;
-  top: 30%;
-  transform: rotate(90deg);
-  z-index: 2;
-}
-
-.timeline-box:nth-child(2n + 1)::after {
-  content: "";
-  position: absolute;
-  top: 32%;
-  right: -12.4%;
-  border-radius: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: red;
-  z-index: 1;
-}
-
-.timeline-box:nth-child(2n)::after {
-  content: "";
-  position: absolute;
-  top: 39%;
-  left: -10%;
-  border-radius: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: red;
-  z-index: 1;
-}
 
 /* contact form */
 #contact {
@@ -470,4 +395,68 @@ button:focus {
   background-color: #80808078;
   /* display: block; */
   color: white;
+}
+
+
+/* Work Experience */
+.timeline {
+    position: relative;
+    width: 75%;
+    border: 2px solid black;
+}
+
+
+.timeline-box {
+    padding: 5px;
+    width: 40%;
+    min-height: 150px;
+    position: relative;
+    left: 5%;
+    text-align: right;
+    border: 2px solid black;
+}
+
+.timeline-box::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: lightgrey;
+    top: 25%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-box:nth-child(2n) {
+    left: 53%;
+}
+
+.timeline-box:nth-child(2n+1)::after {
+    right: -11.8%;
+}
+
+.timeline-box:nth-child(2n)::after {
+    left: -9%;
+}
+#timeline-divider {
+    position: absolute;
+    width: 0;
+    top: 8%;
+    left: 50%;
+    border: 2px dashed #0096fa6b;
+    height: 75%;
+    color: #433E3F;
+}
+
+#timeline-divider .timeline-traveller {
+    position: sticky;
+    top: 135px;
+    z-index: 2;
+}
+
+#timeline-divider i {
+    transform: rotate(90deg);
+  	margin-top: -35px;
+    display: block;
+    color: #2857a4;
 }
